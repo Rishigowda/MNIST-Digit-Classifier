@@ -3,7 +3,7 @@ from PIL import Image
 import torch
 from torchvision import transforms
 from mnist_model import MNISTModel
-import matplotlib.pyplot as plt
+
 
 # Initializing FastAPI app
 app = FastAPI(
