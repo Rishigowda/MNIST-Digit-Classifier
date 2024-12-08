@@ -58,4 +58,4 @@ async def home():
     """
     Home endpoint to test the service.
     """
-    return {"message": "Welcome to MNIST Digit Classifier! Upload an image to /predict to get started."}
+    return {"message": "Welcome to MNIST Digit Classifier! Upload an image to predict and get started."}
