@@ -2,7 +2,6 @@ import torch
 from torchvision import transforms
 from PIL import Image
 from mnist_model import MNISTModel
-import matplotlib.pyplot as plt
 
 # Loading the trained model
 model = MNISTModel()
@@ -32,11 +31,6 @@ def test_model(image_path):
     try:
         image = Image.open(image_path).convert("L")  # Convert to grayscale
         tensor = preprocess(image).unsqueeze(0)  # Add batch dimension
-
-        # Debug: Visualizes the preprocessed image
-        plt.imshow(tensor.squeeze(0).squeeze(0).numpy(), cmap="gray")
-        plt.title("Preprocessed Image")
-        plt.show()
 
         # Predicts using the model
         with torch.no_grad():
