@@ -42,11 +42,6 @@ async def predict(file: UploadFile = File(...)):
         image = Image.open(file.file).convert("L")  # Convert to grayscale
         tensor = preprocess(image).unsqueeze(0)  # Add batch dimension
 
-        # Debug: Visualize the preprocessed image
-        plt.imshow(tensor.squeeze(0).squeeze(0).numpy(), cmap="gray")
-        plt.title("Preprocessed Image")
-        plt.show()
-
         # Makes prediction
         with torch.no_grad():
             output = model(tensor.view(1, -1))  # Flatten input to match model
